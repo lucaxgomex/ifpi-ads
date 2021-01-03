@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void arrays() {
-	int n, a[] = {}, sum = 0;
+	int n, a[100], sum = 0;
 
 	printf("Informe a quantidade de elementos: ");
 	scanf("%d", &n);
@@ -14,7 +14,7 @@ void arrays() {
 		sum += a[i];
 	}
 	printf("\nSoma: %d\n", sum);
-	printf("Media: %.3f\n", (float) sum / n);
+	printf("Media: %.f\n", (float) sum / n);
 }
 
 int main() {

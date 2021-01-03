@@ -1,20 +1,34 @@
-//Sequencia de Fibonacci
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
 
-void sequence() {
-	int n, a[] = {}, first = 0, second = 1, next;
+int main(void) {
 
-	printf("Informe a quantidade de elementos: ");
-	scanf("%d", &n);
+    setlocale(LC_ALL, "");
+    
+    int a=0, b=1, t,c;
 
-	for (int i = 0; i < n; i ++) {
-		printf("Elementos do vetor A: ");
-		scanf("%d", &a[i]);	
-	}
-}
+    printf("Quantidade de termos: ");
+    scanf("%d", &t);
 
-int main() {
-	sequence();
-	return 0;
+    int vet[t];
+    vet[0] = 0;
+    vet[1] = 1;
+    for(int i = 2; i < t; i++){
+        c = a + b;  
+        a = b;      
+        b = c;      
+        vet[i] = c;
+    }
+
+    printf("\nFibonacci\n");
+    for (int j = 0; j < t; j++)
+    {
+        printf("%d ", vet[j]);
+    }
+    
+    
+    system("pause");
+    return 0;
+
 }

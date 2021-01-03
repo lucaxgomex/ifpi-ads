@@ -1,34 +1,49 @@
-//Maior e menor elemento de array
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
 
-void arrays() {
-	int n, a[] = {}, large = 0, small = 0, posLarge = 0, posSmall = 0;
+int main(void)
+{
 
-	printf("Informe a quantidade de elementos: ");
-	scanf("%d", &n);
+    setlocale(LC_ALL, "");
 
-	for (int i = 0; i < n; i ++) {
-		printf("Elementos do vetor A: ");
-		scanf("%d", &a[i]);	
+    int n;
+    printf("Quantidade de elementos: ");
+    scanf("%d", &n);
 
-		if (a[i] > large)  {
-			large = a[i];
-			posLarge = i;
-			small = a[i];
-		}
+    int vet[n];
+    int maior = 0, menor = 0, posMaior = 0, posMenor = 0;
+    for (int i = 0; i < n; i++)
+    {
+        printf("Valor %d > ", i);
+        scanf("%d", &vet[i]);
 
-		if (a[i] < small) {
-			posSmall = 1;
-			small = a[i];
-		}
-	}
+        if (i == 0)
+        {
+            maior = vet[i];
+            menor = vet[i];
+        }
+    }
+    for (int j = 0; j < n; j++)
+    {
 
-	printf("\nMaior: %d --> Posicao: %d", large, posLarge);
-	printf("\nMenor: %d --> Posicao: %d\n", small, posSmall);
-}
+        if (vet[j] > maior)
+        {
+            maior = vet[j];
+            posMaior = j;
+        }
 
-int main() {
-	arrays();
-	return 0;
+        if (vet[j] < menor)
+        {
+            menor = vet[j];
+            posMenor = j;
+        }
+    }
+
+    printf("\n --- Resultados --- \n");
+    printf("Maior = %d na Posicao: %d\n", maior, posMaior);
+    printf("Menor = %d na Posicao: %d\n", menor, posMenor);
+
+    system("pause");
+    return 0;
 }
