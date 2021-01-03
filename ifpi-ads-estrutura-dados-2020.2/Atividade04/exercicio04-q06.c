@@ -1,38 +1,49 @@
-//Indices de um array B a partir de um vetor A
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
 
-void getArrayB(int a[], int n) {
-	int b[] = {}, i = 0;
+int main(void)
+{
 
-	for (i = 0; i < n; i ++) {
-		if (a[i] % 2 == 0) {
-			b[i] = 0;
-		} else {
-			b[i] = 1;
-		}
-	}
+    setlocale(LC_ALL, "");
 
-	for (i = 0; i < n; i ++) {
-		printf("Array B: %d", b[i]);
-	}
-}
+    int q = 0;
 
-void arrays() {
-	int n, a[] = {};
+    printf("Quantidade de elementos: ");
+    scanf("%d", &q);
 
-	printf("Informe a quantidade de elementos: ");
-	scanf("%d", &n);
+    int vetA[q], vetB[q], e;
 
-	for (int i = 0; i < n; i ++) {
-		printf("Elementos do vetor A: ");
-		scanf("%d", &a[i]);		
-	}
+    for (int i = 0; i < q; i++)
+    {
+        // Adicionando elementos em A
+        printf("Pos %d > ", i);
+        scanf("%d", &vetA[i]);
+        // Verificar se par ou impar
+        if (vetA[i] % 2 == 0)
+        {
+            vetB[i] = 0;
+        }
+        else
+        {
+            vetB[i] = 1;
+        }
+    }
 
-	getArrayB(a, n);
-}
+    // Exibindo resultados
+    printf("\nVetores\n");
+    printf("Vetor A\n");
+    for (int j = 0; j < q; j++)
+    {
+        printf("%d", vetA[j]);
+    }
+    printf("\nVetor B\n");
+    for (int k = 0; k < q; k++)
+    {
+        printf("%d", vetB[k]);
+    }
+    printf("\n");
 
-int main() {
-	arrays();
-	return 0;
+    system("pause");
+    return 0;
 }
