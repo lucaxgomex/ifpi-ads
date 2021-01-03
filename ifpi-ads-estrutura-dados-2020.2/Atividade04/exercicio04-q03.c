@@ -1,57 +1,57 @@
-//Conjunto uniao e conjunto intersecao
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
 
-//Criar um array de intersecao
-void getIntersection(int a[], int b[], int number) {
-	int inter[] = {};
+int main(void)
+{
 
-	for (int i = 0; i < number; i ++) {
-		for (int j = 0; i < number; i ++) {
-			if (a[i] == b[j]) {
-				inter[j] = b[j];
-			}
-		}
-	}
-	printf("%d", inter[0]);
-}
+    setlocale(LC_ALL, "");
 
-//Criar um array para uniao
-void getUnion(int a[], int b[], int number) {
-	int u[] = {}, i = 0;
+    int n = 0;
 
-	for (i = 0; i < number; i ++) {
-		for (i = 0; i < number; i ++) {
-			u[i] = b[i];
-		}
-		u[i] = a[i];
-	}
+    printf("Quantidade de elementos> ");
+    scanf("%d", &n);
+    int vetA[n], vetB[n], vetC[n];
+    // Solicita elementos para o vetor A
+    printf("Elementos para o vetor A\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf(">");
+        scanf("%d", &vetA[i]);
+    }
 
-	for (i = 0; i < number; i ++) {
-		printf("%d", u[i]);
-	}
-}
+    // Solicita elementos para o vetor B
+    printf("Elementos para o vetor B\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf(">");
+        scanf("%d", &vetB[i]);
+    }
 
-void arrays() {
-	int n, a[] = {}, b[] = {}, i = 0;
+    // Colocar elementos de A em C
+    printf("Vetor C\n");
+    for (int a = 0, c = 0; a < n; c++, a++)
+    {
+        vetC[a] = vetA[a];
+    }
 
-	printf("Informe a quantidade de elementos: ");
-	scanf("%d", &n);
+    // TODO: Essa parte está com problemas
+    // Colocar elementos de B em C
+    for (int i = 0; i < n; i++) // verifica B
+    {
+        for( int j= 0; j < n; j++){ // verifica C
+            if( vetB[i] != vetC[j]){
+                vetC[n+i] = vetB[i];
+            }
+        }
+    }
 
-	for (i = 0; i < n; i ++) {
-		printf("Elementos de A: ");
-		scanf("%d", &a[i]);		
-	}
+    // Exibir valores de C
+    for (int i = 0; i < n * 2; i++)
+    {
+        printf("Pos %d > %d\n", i, vetC[i]);
+    }
 
-	for (i = 0; i < n; i ++) {
-		printf("Elementos de B: ");
-		scanf("%d", &b[i]);		
-	}
-	getUnion(a, b, n);
-	getIntersection(a, b, n);
-}
-
-int main() {
-	arrays();
-	return 0;
+    system("pause");
+    return 0;
 }
