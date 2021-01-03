@@ -13,8 +13,8 @@ pow((a[first] - a[last]), 2); } printf("\nValor da soma: %d\n", sumElements);
 void allArrays() {
 	int a[20];
 
-	for (int i = 0; i < 20; i ++) {
-		printf("Informe cada elemento do array: ");
+	for (int i = 0, count = 1; i < 20, count <= 20; i ++, count ++) {
+		printf("Informe cada elemento do array [%d]: ", count);
 		scanf("%d", &a[i]);
 	}
 	sum(a);
