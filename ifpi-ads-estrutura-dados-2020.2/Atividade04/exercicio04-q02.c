@@ -1,33 +1,51 @@
-//Criacao de um terceiro vetor a partir de um primeiro
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
 
-int main() {
-	int q, A[100], B[100], i, elements;
+int main(void)
+{
 
-	printf("Informe a quantidade de elementos: ");
-	scanf("%d", &q);	
+    setlocale(LC_ALL, "");
 
-	for (i = 0; i < q; i ++) {
-		printf("Elemento %d de A: ", i);
-		scanf("%d", &elements);		
+    int vetA[9], vetB[9], n = 0;
 
-		A[i] = elements;
-	}
+    // Quantidade de elementos a serem inseridos
+    printf("Numero de elementos do vetor A e vetorB: ");
+    scanf("%d", &n);
 
-	for (i = 0; i < q; i ++) {
-		printf("Elemento %d de B: ", i);
-		scanf("%d", &elements);		
+    // Solicita elementos para o vetor A
+    printf("Elementos para o vetor A\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf(">");
+        scanf("%d", &vetA[i]);
+    }
 
-		B[i] = elements;
-	}
+    // Solicita elementos para o vetor B
+    printf("Elementos para o vetor B\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf(">");
+        scanf("%d", &vetB[i]);
+    }
 
-	printf("\nElementos de C: \n");
-	for (i = 0; i < q; i ++) {
-		printf("%d\n", A[i]);
-		
-		printf("%d\n", B[i]);
-	}
+    // VetorC
+    // Vetor C tem n*2 Elementos
+    int vetC[n * 2];
 
-	return 0;
+    printf("Vetor C\n");
+    for (int a = 0, b = n, c = 0; c < n; c++, a++, b++)
+    {
+        vetC[a] = vetA[a];
+        vetC[b] = vetB[a];
+    }
+
+    // Exibir valores de C
+    for (int i = 0; i < n * 2; i++)
+    {
+        printf("Pos %d > %d\n", i, vetC[i]);
+    }
+
+    system("pause");
+    return 0;
 }
