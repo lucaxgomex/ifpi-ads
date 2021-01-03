@@ -1,38 +1,43 @@
-//Base hexadecimal e decimal
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
 
-void decimal(int bin[8]) {
-	int sum, d = 128;
+int main(void)
+{
 
-	for (int i = 0; i < 8; i ++) {
-		if (bin[i] == 1) {
-			sum += d;
-		}
-		d /= 2;
-	}
-	printf("Resultado em decimal: %d\n", sum);
-}
+    setlocale(LC_ALL, "");
 
-/*
-void hexa(int bin[8]) {
+    int vet[8];
 
-}
-*/
+    printf("Inserir valores no vetor 0 ou 1\n");
+    for (int i = 0, c = 0; i < 8; i++, c++)
+    {
+        printf(">>>");
+        scanf("%d", &vet[i]);
+        // int v = pow(2, c);
+        // printf("\nValor de C>, %d", c);
+        // printf("\n2 ** %d", v);
+    }
 
-void result() {
-	int bin[8];
+    // Converter para binario
+    int decimal = 0;
+    for (int i = 8 - 1, c = 0; i >= 0; i--, c++)
+    {
+        // printf("%d", vet[i]);
+        int v = pow(2, c);
+        if (vet[i] == 1)
+        {
+            decimal += v;
+        }
+        // printf("\nValor de C>, %d", c);
+        // printf("\n2 ** %d", v);
+    }
 
-	for (int i = 0; i < 8; i ++) {
-		printf("Informe cada elemento do array: ");
-		scanf("%d", &bin[i]);
-	}
+    printf("\nValor de binário para decimal: %d\n", decimal);
 
-	//hexa(bin);
-	decimal(bin);
-}
+    // Binário para hexadecimal
 
-int main() {
-	result();
-	return 0;
+    system("pause");
+    return 0;
 }
