@@ -1,67 +1,53 @@
+//Escrever algarismo por extenso
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
-int main()
-{
-
-    char frase[100], recebe[2];
-    int tam;
+int main() {
+    char quote[100];
+    int size;
 
     printf("Frase: ");
     fflush(stdin);
-    gets(frase);
+    fgets(quote, 100, stdin);
 
-    tam = strlen(frase);
+    size = strlen(quote);
 
-    for (int i = 0; i < tam; i++)
-    {
-        if (frase[i] == '1')
-        {
+    for (int i = 0; i < size; i++) {
+        if (quote[i] == '1') {
             printf("um");
-        }
-        else if (frase[i] == '2')
-        {
+        } 
+        else if (quote[i] == '2'){
             printf("dois");
-        }
-        else if (frase[i] == '3')
-        {
+        } 
+        else if (quote[i] == '3') {
             printf("tres");
-        }
-        else if (frase[i] == '4')
-        {
+        } 
+        else if (quote[i] == '4') {
             printf("quatro");
-        }
-        else if (frase[i] == '5')
-        {
+        } 
+        else if (quote[i] == '5') {
             printf("cinco");
-        }
-        else if (frase[i] == '6')
-        {
+        } 
+        else if (quote[i] == '6') {
             printf("seis");
-        }
-        else if (frase[i] == '7')
-        {
+        } 
+        else if (quote[i] == '7') {
             printf("sete");
-        }
-        else if (frase[i] == '8')
-        {
+        } 
+        else if (quote[i] == '8') {
             printf("oito");
-        }
-        else if (frase[i] == '9')
-        {
+        } 
+        else if (quote[i] == '9') {
             printf("nove");
-        }
-        else if (frase[i] == '0')
-        {
+        } 
+        else if (quote[i] == '0') {
             printf("zero");
         }
         else
         {
-            printf("%c", frase[i]);
+            printf("%c", quote[i]);
         }
     }
-
     return 0;
 }
