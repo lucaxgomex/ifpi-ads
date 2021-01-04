@@ -39,7 +39,7 @@ int main() {
         if ( nome[i] == ' ' )
         {
             strcat(ultimoNome, nome[i]);
-            strcat(ultimoNome, nome[i+1]);
+            strcat(ultimoNome, nome[i + 1]);
             strcat(ultimoNome, ".");
         }
         
