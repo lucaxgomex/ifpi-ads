@@ -1,4 +1,4 @@
-//conjulgação de verbo no presente
+//Conjugação de verbo no presente
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
