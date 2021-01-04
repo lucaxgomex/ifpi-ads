@@ -1,32 +1,22 @@
+//Contagem de palavras
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
 int main(void) {
+    char text[100];
+    int wordCount = 0;
 
-    char texto[100];
-    int tam=0, numSpaces=0, totalLetras=0;
-
-    printf("Texto: ");
+    printf("Digite um pequeno texto: ");
     fflush(stdin);
-    gets(texto);
+    fgets(text, 100, stdin);
 
-    tam = strlen(texto);
-
-    for (int i = 0; i < tam; i++)
-    {
-        if (texto[i] == ' ')
-        {
-            numSpaces++;
+    for (int i = 0; i < strlen(text) - 1; i++) {
+        if (text[i] == ' ') {
+            wordCount ++;
         }
     }
-
-    totalLetras = tam - numSpaces;
-    printf("O total de letras e de: %d", totalLetras);
-    
-    
+    printf("%d palavras\n", wordCount + 1);
     
     return 0;
-
 }

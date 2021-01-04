@@ -4,20 +4,21 @@
 #include <string.h>
 
 int main(void) {
-    char palavra[100];
-    int tam = 0;
+    char word[100];
+    int size = 0;
 
-    printf("Palavra: ");
+    printf("Informe um verbo: ");
     fflush(stdin);
-    fgets(palavra, 100, stdin);
+    fgets(word, 100, stdin);
 
-    tam = strlen(palavra);
+    size = strlen(word);
 
-    for (int i = 0; i < tam - 2; i++) {
-        if (palavra[i] == 'e' && palavra[i + 1] == 'r') {
+    printf("Verbo conjugado: ");
+    for (int i = 0; i < size - 2; i++) {
+        if (word[i] == 'e' && word[i + 1] == 'r') {
             printf("o");       
         } else {
-            printf("%c", palavra[i]);   
+            printf("%c", word[i]);   
         }
     }
     printf("\n");

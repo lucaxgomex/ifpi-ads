@@ -1,15 +1,15 @@
+//Organização em hora, minuto e segundo
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
 int main(void) {
 
-    char horario[9];
+    char horario[10];
 
     printf("Horario no formato hh:mm:ss\n");
     fflush(stdin);
-    gets(horario);
+    fgets(horario, 10,stdin);
     
     // printf("%s", horario);
 
