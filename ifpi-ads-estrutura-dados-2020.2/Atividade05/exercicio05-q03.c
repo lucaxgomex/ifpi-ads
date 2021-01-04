@@ -1,25 +1,22 @@
+//Frase sem espaços
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-int main(){
-
-    char frase[100], tam=0;
+int main() {
+    char frase[100];
 
     printf("Frase: ");
     fflush(stdin);
-    gets(frase);
+    fgets(frase, 30, stdin);
 
-    tam = strlen(frase);
-
-    for (int i = 0; i < tam; i++)
-    {
-        if ( frase[i] == ' ') {
-            printf("");
+    for (int i = 0; i < strlen(frase) - 1; i++) {
+        if (frase[i] == ' ') {
+            frase[i] = '-';
         } else {
-            printf("%c", frase[i]);
+            printf("\n%c", frase[i]);
         }
     }
-    
+    printf("\n");
     return 0;
 }
