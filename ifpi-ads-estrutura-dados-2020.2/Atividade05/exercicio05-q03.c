@@ -12,7 +12,7 @@ int main() {
 
     for (int i = 0; i < strlen(frase) - 1; i++) {
         if (frase[i] == ' ') {
-            frase[i] = '-';
+            frase[i] = '-'; //???
         } else {
             printf("\n%c", frase[i]);
         }
