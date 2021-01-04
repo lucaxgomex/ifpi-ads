@@ -1,30 +1,25 @@
+//Nome de usuário
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
-int main(void) {
 
-    char nome[100];
-    int tam=0;
+int main() {
+    char name[100];
+    int size = 0;
 
-    printf("Nome: ");
+    printf("Insira seu nome: ");
     fflush(stdin);
-    gets(nome);
+    fgets(name, 100, stdin);
 
-    tam = strlen(nome);
+    size = strlen(name);
 
-    printf("Nome de usuario:\n");
-    printf("%c", nome[0]);
+    printf("Nome de usuario: \n");
+    printf("%c", name[0]);
     
-    for (int i = 0; i < tam; i++)
-    {
-        if (nome[i] == ' ')
-        {
-            printf("%c", nome[i+1]);
-        }
-        
+    for (int i = 0; i < size; i++) {
+        if (name[i] == ' ') {
+            printf("%c", name[i+1]);
+        }   
     }
-    
     return 0;
-
 }
