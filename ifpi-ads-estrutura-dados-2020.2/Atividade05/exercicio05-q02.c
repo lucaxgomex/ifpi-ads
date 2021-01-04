@@ -1,34 +1,22 @@
+//Cada palavra de uma frase em uma linha
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
 int main(void) {
+    char quote[100];
 
-
-    char frase[100];
-    int tam=0;
-
-    printf("frase: ");
+    printf("Digite uma frase: ");
     fflush(stdin);
-    gets(frase);
+    fgets(quote, 50, stdin);
 
-    tam = strlen(frase);
-
-    for (int i = 0; i < tam; i++)
-    {
-        if (frase[i] == ' ')
-        {
+    for (int i = 0; i < strlen(quote) - 1; i++) {
+        if (quote[i] == ' ') {
             printf("\n");
-        } else
-        {
-            printf("%c", frase[i]);
-        }
-        
-        
+        } else {
+            printf("%c", quote[i]);
+        }   
     }
-    
-    
+    printf("\n");
     return 0;
-
 }
