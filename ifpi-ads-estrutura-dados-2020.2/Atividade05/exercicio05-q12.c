@@ -1,17 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
-int main(void)
-{
+int main() {
 
     char nome[100], ultimoNome[100], nomeImpresso[100];
     int tam = 0;
 
     printf("Nome: ");
     fflush(stdin);
-    gets(nome);
+    fgets(nome, 100, stdin);
 
     tam = strlen(nome);
 
