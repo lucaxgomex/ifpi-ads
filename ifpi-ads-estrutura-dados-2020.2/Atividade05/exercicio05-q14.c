@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
 int main(void) {
@@ -38,9 +37,5 @@ int main(void) {
         
     }
     printf("\nSua nova frase é: %s", frase);
-    
-    
-    
     return 0;
-
 }
