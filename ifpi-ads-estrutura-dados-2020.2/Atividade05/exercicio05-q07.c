@@ -1,25 +1,25 @@
+//conjulgação de verbo no presente
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
-int main(void)
-{
-
+int main(void) {
     char palavra[100];
     int tam = 0;
+
     printf("Palavra: ");
     fflush(stdin);
-    gets(palavra);
-    tam = strlen(palavra);
-    // printf("%s\n", palavra);
-    // printf("Tamanho: %d", tam);
-    // Adicionar verificador para as 2 ultimas letras da palavra
+    fgets(palavra, 100, stdin);
 
-    for (int i = 0; i < tam - 2; i++)
-    {
-        printf("%c", palavra[i]);
+    tam = strlen(palavra);
+
+    for (int i = 0; i < tam - 2; i++) {
+        if (palavra[i] == 'e' && palavra[i + 1] == 'r') {
+            printf("o");       
+        } else {
+            printf("%c", palavra[i]);   
+        }
     }
-    printf("o");
+    printf("\n");
     return 0;
 }
