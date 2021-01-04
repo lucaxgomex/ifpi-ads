@@ -1,12 +1,8 @@
+//Condicao entre dois vetores
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 
-int main(void)
-{
-
-    setlocale(LC_ALL, "");
-
+int main() {
     int q = 0;
 
     printf("Quantidade de elementos: ");
@@ -14,18 +10,15 @@ int main(void)
 
     int vetA[q], vetB[q], e;
 
-    for (int i = 0; i < q; i++)
-    {
+    for (int i = 0; i < q; i++) {
         // Adicionando elementos em A
         printf("Pos %d > ", i);
         scanf("%d", &vetA[i]);
+
         // Verificar se par ou impar
-        if (vetA[i] % 2 == 0)
-        {
+        if (vetA[i] % 2 == 0) {
             vetB[i] = 0;
-        }
-        else
-        {
+        } else {
             vetB[i] = 1;
         }
     }
@@ -33,17 +26,16 @@ int main(void)
     // Exibindo resultados
     printf("\nVetores\n");
     printf("Vetor A\n");
-    for (int j = 0; j < q; j++)
-    {
+    for (int j = 0; j < q; j++) {
         printf("%d", vetA[j]);
     }
+
     printf("\nVetor B\n");
-    for (int k = 0; k < q; k++)
-    {
+    for (int k = 0; k < q; k++) {
         printf("%d", vetB[k]);
     }
+
     printf("\n");
 
-    system("pause");
     return 0;
 }

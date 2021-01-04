@@ -1,52 +1,39 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 
-int main(void)
-{
-
-    setlocale(LC_ALL, "");
-
-    // Criar matriz
+int main() {
     int count;
-    printf("Ordem: ");
+
+    printf("Informe a ordem da matriz: ");
     scanf("%d", &count);
 
     int v[count][count];
 
-    for (int i = 0; i < count; i++)
-    {
-        for (int j = 0; j < count; j++)
-        {
-            printf("Valor: ");
+    for (int i = 0; i < count; i++) {
+        for (int j = 0; j < count; j++) {
+            printf("Informe os elementos: ");
             scanf("%d", &v[i][j]);
         }
     }
 
     // Calculus
     int linhaMaiorSoma = 0, linhaMenorSoma = 0, posMaiorLinha = 0, posMenorLinha = 0, somaAux = 0;
-    for (int i = 0; i < count; i++)
-    {
-        for (int j = 0; j < count; j++)
-        {
+    for (int i = 0; i < count; i++) {
+        for (int j = 0; j < count; j++) {
             somaAux += v[i][j];
         }
-        if (i == 0)
-        {
+
+        if (i == 0) {
             linhaMaiorSoma = somaAux;
             linhaMenorSoma = somaAux;
             posMaiorLinha = i;
             posMenorLinha = i;
-        }
-        else
-        {
-            if (somaAux > linhaMaiorSoma)
-            {
+        } else {
+            if (somaAux > linhaMaiorSoma) {
                 linhaMaiorSoma = somaAux;
                 posMaiorLinha = i;
             }
-            if (somaAux < linhaMenorSoma)
-            {
+            if (somaAux < linhaMenorSoma) {
                 linhaMenorSoma = somaAux;
                 posMenorLinha = i;
             }
@@ -61,6 +48,5 @@ int main(void)
     printf("\nSoma da Menor linha: %d\n", linhaMenorSoma);
     printf("\nPosicao MENOR linha: %d\n", posMenorLinha);
 
-    system("pause");
     return 0;
 }

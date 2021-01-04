@@ -1,30 +1,23 @@
+//Soma dos numeros negativos e dos numeros positivos
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 
-int main(void)
-{
-
-    setlocale(LC_ALL, "");
-
+int main(void){
     int count;
-    printf("Ordem da matriz: ");
+
+    printf("Informe a ordem da matriz: ");
     scanf("%d", &count);
 
     int vet[count][count], somaP = 0, somaN = 0;
 
-    for (int i = 0; i < count; i++)
-    {
-        for (int j = 0; j < count; j++)
-        {
-            printf("Valor pos %d-%d: ", i, j);
+    for (int i = 0; i < count; i++) {
+        for (int j = 0; j < count; j++) {
+            printf("Valor das posicoes %d - %d: ", i, j);
             scanf("%d", &vet[i][j]);
-            if (vet[i][j] >= 0)
-            {
+
+            if (vet[i][j] >= 0) {
                 somaP += vet[i][j];
-            }
-            else
-            {
+            } else {
                 somaN += vet[i][j];
             }
         }
@@ -33,7 +26,6 @@ int main(void)
     printf("\nResultados\n");
     printf("\nSoma dos Positivos: %d\n", somaP);
     printf("\nSoma dos Negativos: %d\n", somaN);
-
-    system("pause");
+    
     return 0;
 }

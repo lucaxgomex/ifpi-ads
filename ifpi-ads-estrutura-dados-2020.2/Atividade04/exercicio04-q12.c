@@ -18,6 +18,7 @@
 9 [ 0 0 0 0 0 0 0 0 0 1 ]
 i
 */
+//Criacao de matriz identidade
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -25,12 +26,12 @@ i
 #define C 10
 
 int main(){
-	int i, j, m[L][C], soma[C];
+	int m[L][C], soma[C];
 
-	for(i=0; i < L; i++){
-		for (j=0; j < C; j++){
+	for(int i = 0; i < L; i ++) {
+		for (int j = 0; j < C; j ++) {
 			//if(i==j || j==C-i-1){ // deixa as duas diagonais com valores 1 e os demais 0
-			if(i==j){
+			if(i == j) {
 				m[i][j] = 1;
 			} else {
 				m[i][j] = 0;
@@ -38,10 +39,11 @@ int main(){
 		}
 	}
 
-	printf("\n\n  Matriz Diagonal\n\n");
-	for(i=0; i < L; i++){
+	printf("\nMatriz Diagonal\n");
+
+	for(int i = 0; i < L; i ++){
 		printf("  %i [ ", i);
-		for (j=0; j < C; j++){
+		for (int j = 0; j < C; j ++){
 			soma[j] = soma[j]+(m[i][j]);
 			printf("%i ", m[i][j]);
 		}
