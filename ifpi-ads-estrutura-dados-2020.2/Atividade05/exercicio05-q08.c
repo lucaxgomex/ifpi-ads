@@ -3,8 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-
+int main() {
     char horario[10];
 
     printf("Horario no formato hh:mm:ss\n");

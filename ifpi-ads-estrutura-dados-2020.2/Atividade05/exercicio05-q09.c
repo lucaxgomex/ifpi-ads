@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
+int main() {
     char password[100], tip[10] = {'L', 'i', 'n', 'u', 'x'}, value;
     int size = 0;
 

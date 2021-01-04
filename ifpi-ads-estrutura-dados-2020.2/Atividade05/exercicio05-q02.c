@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
+int main() {
     char quote[100];
 
     printf("Digite uma frase: ");

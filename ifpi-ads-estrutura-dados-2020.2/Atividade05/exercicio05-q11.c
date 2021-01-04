@@ -1,44 +1,33 @@
+//Nome e sobrenome
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
-int main(void)
-{
+int main() {
+    char name[100], firstName[100], lastName[100];
+    int size = 0, i = 0, space = 0;
 
-    char nome[100], primeiroNome[100], ultimoNome[100];
-    int tam = 0, i = 0, j = 0;
+    printf("Informe seu nome completo: ");
+    fflush(stdin) - 1;
+    fgets(name, 100, stdin);
+    size = strlen(name) - 1;
 
-    printf("Nome completo: ");
-    fflush(stdin);
-    gets(nome);
-    tam = strlen(nome);
-    while (nome[i] != ' ')
-    {
-        primeiroNome[i] = nome[i];
+    while (name[i] != ' ') {
+        firstName[i] = name[i];
         i++;
     }
-    primeiroNome[i] = '\0';
-
-    // Pegar ultimo nome
-    int posUltimoEspace = 0;
-    for (j = tam; j >= 0; j--)
-    {
-        if (nome[j] == ' ')
-        {
-            posUltimoEspace = j;
+    
+    for (int j = size; j >= 0; j--) {
+        if (name[j] == ' ') {
+            space = j;
             break;
         }
     }
 
-    int k, x;
-    for (k = posUltimoEspace + 1, x = 0; k < tam; k++, x++)
-    {
-        ultimoNome[x] = nome[k];
+    for (int k = space + 1, x = 0; k < size; k++, x++) {
+        lastName[x] = name[k];
     }
-    ultimoNome[x] = '\0';
 
-    // Concatenar
-    printf("%s/%s", ultimoNome, primeiroNome);
+    printf("\n%s/%s\r\n", lastName, firstName);
     return 0;
 }
