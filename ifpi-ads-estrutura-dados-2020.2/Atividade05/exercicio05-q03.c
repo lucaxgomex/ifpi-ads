@@ -4,17 +4,17 @@
 #include <string.h>
 
 int main() {
-    char frase[100];
+    char quote[100];
 
     printf("Frase: ");
     fflush(stdin);
-    fgets(frase, 30, stdin);
+    fgets(quote, 100, stdin);
 
-    for (int i = 0; i < strlen(frase) - 1; i++) {
-        if (frase[i] == ' ') {
-            frase[i] = '-'; //???
+    for (int i = 0; i < strlen(quote) - 1; i++) {
+        if (quote[i] == ' ') {
+            quote[i] = '-'; //???
         } else {
-            printf("\n%c", frase[i]);
+            printf("\n%c", quote[i]);
         }
     }
     printf("\n");

@@ -1,22 +1,22 @@
+//Caracteres duplicados
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int main(){
+int main() {
 
-    char frase[100];
-    int tam=0;
+    char quote[100];
+    int size = 0;
 
-    printf("Frase: ");
+    printf("Digite uma frase: ");
     fflush(stdin);
-    gets(frase);
+    fgets(quote, 100, stdin);
 
-    tam = strlen(frase);
+    size = strlen(quote);
 
-    for (int i = 0; i < tam; i++)
-    {
-        printf("%c", frase[i]);
-        printf("%c", frase[i]);
+    for (int i = 0; i < size; i ++) {
+        printf("%c", quote[i]);
+        printf("%c", quote[i]);
     }
     
     return 0;
