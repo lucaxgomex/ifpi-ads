@@ -1,9 +1,0 @@
-Este programa fora escrito de modo a estudar como um código se comporta quando está conectado a um banco de dados.
-
-O "banco de dados" utilizado é uma simulação de um mesmo, utilizado de modo simples.
-
-Um aviso importante sobre o código diz respeito a um comendo específico.
-
-No MENU, é preciso de tomar cuidado com a opção número 5!
-
-Por meio dela, é possível apagar todos os valores do banco de dados. Então, peço certa atenção em relação ao uso das opções.
