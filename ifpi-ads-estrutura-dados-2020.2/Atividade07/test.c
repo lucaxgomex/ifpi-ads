@@ -11,25 +11,32 @@ int main()
 
     srand(time(NULL));
 
-    for(count=0; count < 9; count++){
-        array[count] = (char)rand() % 9 + 1;
+    for(count = 0; count < 9; count++){
+        array[count] = rand() % 9 + 1;
+        char c = array[count];
+        printf("%d", c);
     }
-
+/*
     while(i < 9){
-        int r = rand()%9+1;
+        int r = (char)rand() % 9 + 1;
 
-        for (x = 0; x < i; x++)
+        for (x = 0; x < i; x ++)
         {
-            if(array[x] == r){
+            if (array[x] == r) 
+            {
                 break;
             }
         }
-        if(x==i){
+        if(x == i)
+        {
             array[i++]=r;
         }
     }
-    for(p = 0; p < 9;p++){
-        printf("%d ", array[p]);
+
+    for(p = 0; p < 9; p ++){
+        printf("%c ", array[p]);
     }
+*/
+    printf("\n");
     return 0;
 }
